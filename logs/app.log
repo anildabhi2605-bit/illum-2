@@ -1,0 +1,64 @@
+2026-10-31 13:32:16,047 [INFO] illum: ==================================================
+2026-10-31 13:32:16,047 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,047 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,048 [INFO] illum:    Binding: http://127.0.0.1:8080 (Localhost Only)
+2026-10-31 13:32:16,048 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,048 [INFO] illum: ==================================================
+2026-10-31 13:32:16,052 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...
+2026-10-31 13:32:16,141 [INFO] illum: ==================================================
+2026-10-31 13:32:16,141 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,142 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,142 [INFO] illum:    Binding: http://127.0.0.1:8000 (Localhost Only)
+2026-10-31 13:32:16,142 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,142 [INFO] illum: ==================================================
+2026-10-31 13:32:16,149 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...
+2026-10-31 13:32:16,156 [INFO] illum: ==================================================
+2026-10-31 13:32:16,156 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,157 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,157 [INFO] illum:    Binding: http://127.0.0.1:8000 (Localhost Only)
+2026-10-31 13:32:16,157 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,157 [INFO] illum: ==================================================
+2026-10-31 13:32:16,159 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...
+2026-10-31 13:32:16,542 [INFO] illum: ==================================================
+2026-10-31 13:32:16,542 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,542 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,542 [INFO] illum:    Binding: http://127.0.0.1:8000 (Localhost Only)
+2026-10-31 13:32:16,543 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,543 [INFO] illum: ==================================================
+2026-10-31 13:32:16,546 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...
+2026-10-31 13:32:16,552 [INFO] illum: ==================================================
+2026-10-31 13:32:16,552 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,552 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,552 [INFO] illum:    Binding: http://127.0.0.1:8000 (Localhost Only)
+2026-10-31 13:32:16,552 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,552 [INFO] illum: ==================================================
+2026-10-31 13:32:16,552 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...
+2026-10-31 13:32:16,560 [INFO] illum: ==================================================
+2026-10-31 13:32:16,560 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,560 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,560 [INFO] illum:    Binding: http://127.0.0.1:8000 (Localhost Only)
+2026-10-31 13:32:16,561 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,561 [INFO] illum: ==================================================
+2026-10-31 13:32:16,562 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...
+2026-10-31 13:32:16,568 [INFO] illum: ==================================================
+2026-10-31 13:32:16,568 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,569 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,569 [INFO] illum:    Binding: http://127.0.0.1:8000 (Localhost Only)
+2026-10-31 13:32:16,569 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,569 [INFO] illum: ==================================================
+2026-10-31 13:32:16,572 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...
+2026-10-31 13:32:16,578 [INFO] illum: ==================================================
+2026-10-31 13:32:16,578 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,578 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,578 [INFO] illum:    Binding: http://127.0.0.1:8000 (Localhost Only)
+2026-10-31 13:32:16,578 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,578 [INFO] illum: ==================================================
+2026-10-31 13:32:16,580 [ERROR] illum: Unhandled runtime exception: RuntimeError
+2026-10-31 13:32:16,580 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...
+2026-10-31 13:32:16,740 [INFO] illum: ==================================================
+2026-10-31 13:32:16,740 [INFO] illum:    ILLUM AI STUDIO — Local Desktop Runtime
+2026-10-31 13:32:16,740 [INFO] illum:    Version: 0.1.0
+2026-10-31 13:32:16,740 [INFO] illum:    Binding: http://127.0.0.1:8000 (Localhost Only)
+2026-10-31 13:32:16,740 [INFO] illum:    Environment: development
+2026-10-31 13:32:16,740 [INFO] illum: ==================================================
+2026-10-31 13:32:16,743 [INFO] illum: ILLUM AI STUDIO shutting down gracefully...

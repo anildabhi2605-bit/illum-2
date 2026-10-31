@@ -1,0 +1,19 @@
+# ILLUM AI STUDIO — Core Runtime Dependencies (ADR-001 / Python 3.12)
+# Web Server & Backend API
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# Schema & Data Validation
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# Database & ORM (SQLite Engine built into standard library)
+sqlalchemy==2.0.36
+alembic==1.14.0
+
+# Configuration & Secrets
+python-dotenv==1.0.1
+
+# HTTP Client & Templates
+httpx==0.28.1
+jinja2==3.1.5

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-zinc-950 text-zinc-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ILLUM AI STUDIO — Provider Configuration & Secret Status</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Desktop dark workbench styling */
+    body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+</head>
+<body class="h-full flex flex-col bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-500 selection:text-zinc-950">
+
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-zinc-800 bg-zinc-900/60 backdrop-blur sticky top-0 z-20">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center font-black text-zinc-950 text-base shadow-lg shadow-amber-500/20">
+          IL
+        </div>
+        <div>
+          <h1 class="text-sm font-bold tracking-tight text-zinc-100">ILLUM AI STUDIO</h1>
+          <p class="text-xs text-zinc-400">Desktop Runtime <span class="mono text-zinc-500">v{{ version }}</span></p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3 text-xs">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/70 text-emerald-400 border border-emerald-800/50">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          127.0.0.1:{{ port }}
+        </span>
+        <a href="/health" class="px-3 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors">/health</a>
+        <a href="/docs" class="px-3 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors">Swagger API</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-8 space-y-6">
+
+    <!-- Page Title & Header Actions -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-zinc-800 pb-5">
+      <div>
+        <h2 class="text-2xl font-extrabold tracking-tight text-white">Provider Configuration & Status</h2>
+        <p class="text-sm text-zinc-400 mt-1">
+          Inspect configured credentials, test provider metadata connections, and view restart guidance.
+        </p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="btn-test-all" type="button" class="inline-flex items-center px-4 py-2 text-xs font-semibold rounded-lg bg-amber-500 text-zinc-950 hover:bg-amber-400 active:bg-amber-600 transition-all shadow-md shadow-amber-500/10">
+          ⚡ Test All Providers
+        </button>
+      </div>
+    </div>
+
+    <!-- Security & Plaintext Disclosure Banner (Mandatory Requirement) -->
+    <div class="rounded-xl border border-amber-500/30 bg-amber-950/20 p-4 text-amber-200">
+      <div class="flex items-start gap-3">
+        <div class="text-amber-400 text-xl font-bold leading-none mt-0.5">⚠️</div>
+        <div class="space-y-1">
+          <h3 class="text-sm font-semibold text-amber-300">Security Disclosure — Plaintext Local Storage</h3>
+          <p class="text-xs text-amber-200/90 leading-relaxed">
+            API keys are stored in <strong>plaintext</strong> inside your local <code class="mono bg-amber-950/80 px-1 py-0.5 rounded border border-amber-700/50">.env</code> file on your computer. They are <strong>never</strong> transmitted to external telemetry or third parties, but they are <strong>NOT encrypted at rest</strong> on your hard drive. Ensure your local workstation is protected, and <strong>never commit or share</strong> your <code class="mono">.env</code> file.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notepad Workflow & Server Restart Instructions (DEC-003, P02-T03) -->
+    <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5 space-y-3">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-2">
+        <h3 class="text-sm font-bold text-zinc-200 flex items-center gap-2">
+          <span>📝</span> Key Addition, Update & Removal Workflow (Notepad)
+        </h3>
+        <span class="text-xs px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 mono">DEC-003 Approved</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs text-zinc-300">
+        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
+          <span class="text-amber-400 font-bold">Step 1</span>
+          <p class="font-medium text-white">Open .env</p>
+          <p class="text-zinc-400">Right-click <code class="mono bg-zinc-800 px-1 rounded">.env</code> and select <em>Open with Notepad</em>.</p>
+        </div>
+        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
+          <span class="text-amber-400 font-bold">Step 2</span>
+          <p class="font-medium text-white">Edit Your Keys</p>
+          <p class="text-zinc-400">Add or empty keys, e.g. <code class="mono bg-zinc-800 px-1 rounded">GEMINI_API_KEY=...</code></p>
+        </div>
+        <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 space-y-1">
+          <span class="text-amber-400 font-bold">Step 3</span>
+          <p class="font-medium text-white">Save in Notepad</p>
+          <p class="text-zinc-400">Save as standard UTF-8 text and close Notepad.</p>
+        </div>
+        <div class="p-3 rounded-lg bg-amber-950/30 border border-amber-600/40 space-y-1">
+          <span class="text-amber-400 font-bold">Step 4 (Crucial)</span>
+          <p class="font-medium text-amber-200">Restart Server</p>
+          <p class="text-amber-300/80">Restart <code class="mono bg-amber-950 px-1 rounded">run.bat</code> or <code class="mono bg-amber-950 px-1 rounded">run.sh</code> to activate.</p>
+        </div>
+      </div>
+      <p class="text-xs text-zinc-400 italic pt-1">
+        ℹ️ Note: This web UI is intentionally read-only. In-browser key entry and online file modification are prohibited to prevent secret leakage in browser caches or DOM trees.
+      </p>
+    </div>
+
+    <!-- Provider Configuration & Connection Grid -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-bold text-zinc-100">AI Providers ({{ providers|length }} Monitored)</h3>
+        <span class="text-xs text-zinc-400">Probes use zero-cost metadata endpoints only (DEC-007)</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for p in providers %}
+        <div id="provider-card-{{ p.id }}" class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-5 flex flex-col justify-between space-y-4 hover:border-zinc-700 transition-colors">
+          <!-- Card Header -->
+          <div class="space-y-2">
+            <div class="flex items-start justify-between">
+              <div class="flex items-center space-x-2.5">
+                <span class="text-xl">{{ p.icon }}</span>
+                <div>
+                  <h4 class="text-base font-bold text-white">{{ p.name }}</h4>
+                  <p class="text-xs text-zinc-400">{{ p.role }}</p>
+                </div>
+              </div>
+              <div>
+                {% if p.configured %}
+                <span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800/60">
+                  CONFIGURED
+                </span>
+                {% else %}
+                <span class="px-2 py-0.5 text-xs font-medium rounded-full bg-zinc-800 text-zinc-400 border border-zinc-700">
+                  NOT CONFIGURED
+                </span>
+                {% endif %}
+              </div>
+            </div>
+
+            <!-- Credentials & Invariants Row -->
+            <div class="bg-zinc-950/60 rounded-lg p-3 border border-zinc-800/80 text-xs space-y-1.5 mono">
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-500">Config Key:</span>
+                <span class="text-zinc-300 font-semibold">{{ p.env_var }}</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-500">Masked Value:</span>
+                <span class="masked-key-val text-amber-300 font-semibold">{{ p.masked_key if p.masked_key else "None" }}</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-zinc-500">Auth Endpoint:</span>
+                <span class="text-zinc-400 text-[11px] truncate max-w-[200px]" title="{{ p.auth_endpoint }}">{{ p.auth_endpoint }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connection Status & Action Area -->
+          <div class="border-t border-zinc-800/80 pt-3 space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <span class="text-xs text-zinc-400">Connection:</span>
+                <span class="connection-badge px-2.5 py-1 text-xs font-semibold rounded-full border bg-zinc-800 text-zinc-400 border-zinc-700">
+                  {% if not p.configured %}NOT CONFIGURED{% else %}NOT TESTED{% endif %}
+                </span>
+              </div>
+              <div class="text-xs font-mono text-zinc-400">
+                Latency: <span class="latency-val text-zinc-200">—</span>
+              </div>
+            </div>
+
+            <div class="feedback-text text-xs text-zinc-400 font-mono min-h-[1.25rem]">
+              {% if not p.configured %}Add {{ p.env_var }} to .env and restart.{% else %}Ready to test connection.{% endif %}
+            </div>
+
+            <div class="flex justify-end pt-1">
+              <button 
+                type="button" 
+                class="btn-test-provider px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-100 transition-colors border border-zinc-700 active:scale-95 disabled:opacity-50"
+                data-provider="{{ p.id }}">
+                Test Connection
+              </button>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Live Test Session Activity Log -->
+    <div class="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 space-y-3">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-2">
+        <h3 class="text-sm font-bold text-zinc-200 flex items-center gap-2">
+          <span>📡</span> Test Session Activity Feed
+        </h3>
+        <span class="text-xs text-zinc-500 font-mono">In-memory session log (secrets redacted)</span>
+      </div>
+      <div id="activity-log" class="max-h-48 overflow-y-auto space-y-1 p-2 rounded bg-zinc-950 border border-zinc-800/80 text-xs font-mono">
+        <!-- Javascript prepends log entries here -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800 py-4 mt-auto bg-zinc-950 text-center text-xs text-zinc-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
+      <p>ILLUM AI STUDIO — Local Workbench Runtime Bound to 127.0.0.1 (DEC-002, DEC-003, DEC-018)</p>
+      <p>Provider SDKs: None (DEC-007 OPEN) · HTTP Client: httpx</p>
+    </div>
+  </footer>
+
+  <!-- Client-side Logic (Vanilla JS, Zero npm) -->
+  <script src="/static/js/config_status.js"></script>
+</body>
+</html>

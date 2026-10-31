@@ -1,0 +1,10 @@
+# ILLUM AI STUDIO — Development & Testing Dependencies
+-r requirements.txt
+
+# Testing Framework
+pytest==8.3.4
+pytest-asyncio==0.25.0
+
+# Code Quality & Type Checking
+ruff==0.8.6
+mypy==1.14.1
